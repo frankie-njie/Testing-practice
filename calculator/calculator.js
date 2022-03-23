@@ -4,7 +4,7 @@ function calculator (a, b){
   let multiply = a * b;
   let divide = a / b;
 
-  console.log({add, subtract, multiply, divide});
+  //console.log({add, subtract, multiply, divide});
   return {add, subtract, multiply, divide}
 }
 
