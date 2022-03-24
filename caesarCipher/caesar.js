@@ -10,20 +10,29 @@ function caesar(string, key) {
   let str = string.split(''); 
   // for each value of string array add the given key
   let strShifted = str.map(element => {
-    //console.log(element);
     let position 
+    //check for empty space in string
     if (element === ' ' ){
       return position = ' ';
     }
-
+    //check for wrapping
     position = dictionary.findIndex((val) => val === element)
-    position += key;
-    return dictionary[position]
+    if((position + key) > dictionary.length){
+      let result = (position + key)-dictionary.length
+     return dictionary[result]
+    } else{
+      return dictionary[position + key]
+    }
+
+    //check for upper case
+    
+    //position + key > dictionary.length ? console.log( dictionary[(position + key)-dictionary.length]): console.log( dictionary[position + key])
+    // position += key;
+    // return dictionary[position]
   }).join('')
   
-
   console.log(strShifted);
 
 }
 
-module.exports = caesar("hello boys", 2)
+module.exports = caesar("xampo boyz", 5)
